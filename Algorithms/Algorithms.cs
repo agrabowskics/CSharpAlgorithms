@@ -57,6 +57,40 @@ namespace Algorithms
         }
 
         /// <summary>
+        ///     Selection sort sorts one element to the start of the set, for each element in the set
+        ///     
+        ///     Time:  Θ(n^2)
+        ///     space: Θ(1)
+        /// </summary>
+        /// <param name="lst">List to sort</param>
+        public static void SelectionSort(List<int> lst)
+        {
+            // Loop through every element except the last
+            for(var x = 0; x < lst.Count - 1; x++) 
+            {
+                // Set a local min to the current element
+                var localMinIndex = x;
+                // Check every element after the currently selected one
+                for (var y = x + 1; y < lst.Count; y++)
+                {
+                    // Compare local min to a new possible one
+                    if (lst[y] < lst[localMinIndex])
+                    {
+                        // Set new local min
+                        localMinIndex = y;
+                    }
+                }
+
+                // As long as the local min has changed
+                if (x != localMinIndex)
+                {
+                    // Swap current element with the next local min
+                    (lst[x], lst[localMinIndex]) = (lst[localMinIndex], lst[x]);
+                }
+            }
+        }
+
+        /// <summary>
         ///     Merge sort is a recursive algorithm that splits a data set in half until every element is in a set by itself.
         ///      once split, the algorithm sorts consecutive sets until it becomes a single set again.
         ///      
