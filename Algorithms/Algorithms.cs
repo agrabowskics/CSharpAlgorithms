@@ -33,6 +33,30 @@ namespace Algorithms
         }
 
         /// <summary>
+        ///     Insertion sort compares two consecutive elements, if unsorted, swap the element until it is sorted.
+        ///     
+        ///     Time:  Θ(n^2)
+        ///     space: Θ(1)
+        /// </summary>
+        /// <param name="lst">List to sort</param>
+        public static void InsertionSort(List<int> lst)
+        {
+            // Staring at the first element, reach every element
+            for (int x = 1; x < lst.Count; x++)
+            {
+                var pos = x;
+                // Compare the current element to the previous element (local max)
+                while (pos >= 1 && lst[pos] < lst[pos - 1])
+                {
+                    // Swap elements until element is in place
+                    (lst[pos - 1], lst[pos]) = (lst[pos], lst[pos - 1]);
+                    pos--;
+                }
+                             
+            }
+        }
+
+        /// <summary>
         ///     Merge sort is a recursive algorithm that splits a data set in half until every element is in a set by itself.
         ///      once split, the algorithm sorts consecutive sets until it becomes a single set again.
         ///      
