@@ -8,7 +8,7 @@ public class Program
     private static List<int> simpleList  = new() { 5, 4, 3, 2, 1 };
 
     private const string lstPrompt  = "Please select the list you would like to sort: \n 0. Simple \n 1. Complex"; 
-    private const string funcPrompt = "Please select the sorting method: \n 0. Bubble \n 1. Merge"; 
+    private const string funcPrompt = "Please select the sorting method: \n 0. Bubble \n 1. Insertion Sort \n 2. Merge"; 
 
     /// <summary>
     ///     Main program
@@ -67,6 +67,9 @@ public class Program
                 BubbleSort(lst);
                 break;
             case 1:
+                InsertionSort(lst);
+                break;
+            case 2:
                 lst = MergeSort(lst);
                 break;
         }
